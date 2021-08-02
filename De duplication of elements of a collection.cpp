@@ -29,7 +29,7 @@ void m2(int *n,int a)
     }
     for(int i=0;i<=a;i++)
     {
-        if(mark[i]==1)
+        if(mark[i]==0)
         cout<<n[i]<<" ";  
     }
 }
@@ -69,32 +69,36 @@ int main()
 {
     
     int m;
-    cin>>m;
-    if(m==1)
+    //cin>>m;
+    while(scanf("%d",&m)!=EOF)
     {
-        int a;
-        cin>>a;
-        int n[a];
-        for(int i=0;i<=a;i++)
+        if(m==1)
         {
-            cin>>n[i];
+            int a;
+            cin>>a;
+            int n[a];
+            for(int i=0;i<=a;i++)
+            {
+                cin>>n[i];
+            }
+            m1(n,a);//sort      o(n+n*logn)
         }
-        m1(n,a);//sort      o~o(n+n*log*n)
-    }
-    else if(m==2)
-    {
-        int a;
-        cin>>a;
-        int n[a];
-        for(int i=0;i<=a;i++)
+        else if(m==2)
         {
-            cin>>n[i];
+            int a;
+            cin>>a;
+            int n[a];
+            for(int i=0;i<=a;i++)
+            {
+                cin>>n[i];
+            }
+            m2(n,a);//mark    o(n+n^2)
         }
-        m2(n,a);//mark    o<o(n^2)
+        else if(m==3)
+        {
+            m3();//hans o(2n)
+        }
     }
-    else if(m==3)
-    {
-        m3();//hans o(n)
-    }
+
     return 0;
 }
